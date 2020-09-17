@@ -20,6 +20,9 @@ function Bar() {
         <Link to='/upload' style={navStyle}>
           <li>Upload</li>
         </Link>
+        <Link to='/google' style={navStyle}>
+          <li>Google</li>
+        </Link>
       </ul>
     </nav>
   );

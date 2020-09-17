@@ -5,5 +5,6 @@ import { firebaseConfig } from '../config';
 
 const app = firebase.initializeApp(firebaseConfig);
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
 
-export { app, firebase, googleAuthProvider };
+export { app, firebase, googleAuthProvider, facebookAuthProvider };

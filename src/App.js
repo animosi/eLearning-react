@@ -1,15 +1,15 @@
 import React from 'react';
-import './styles/App.scss';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { AuthProvider } from './firebase/Auth';
 import Nav from './components/Nav/Bar';
+import Home from './components/Home/Home';
 import Register from './components/Registration/Form';
 import Login from './components/Login/Form';
 import Udrop from './components/DropZone/Udrop';
-import Home from './components/Home/Home';
-import Secret from './components/Secret/Secret';
+import Google from './components/GoolgePopUp/Google';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute.js';
-// import UploadScreen from './components/UploadScreen/UploadScreen';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { AuthProvider } from './firebase/Auth';
+import Secret from './components/Secret/Secret';
+import './styles/App.scss';
 
 function App() {
   return (
@@ -23,6 +23,7 @@ function App() {
             <Route path='/login' exact component={Login} />
             <Route path='/register' exact component={Register} />
             <Route path='/upload/' exact component={Udrop} />
+            <Route path='/google/' exact component={Google} />
           </Switch>
         </div>
       </Router>

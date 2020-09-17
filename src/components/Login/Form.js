@@ -53,7 +53,7 @@ export default function Login() {
         <div>
           <label htmlFor='channel'></label>
           <Field
-            type='text'
+            type='password'
             id='password'
             name='password'
             placeholder='Password'
