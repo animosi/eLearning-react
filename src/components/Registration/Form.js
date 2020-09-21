@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
 import { app } from '../../firebase/firebase';
 import { AuthContext } from '../../firebase/Auth';
 import { Redirect } from 'react-router-dom';
+import { validationSchema } from '../../validators/auth.validator';
+import { Button } from '@material-ui/core';
 
 const initialValues = {
   email: '',
@@ -17,17 +18,8 @@ const onSubmit = (values) => {
     .auth()
     .createUserWithEmailAndPassword(email, password)
     .then((res) => console.log(res))
-    .catch(function (error) {
-      console.log({ error: error.code, message: error.message });
-    });
+    .catch((err) => console.log({ error: err.code, message: err.message }));
 };
-
-const validationSchema = Yup.object().shape({
-  email: Yup.string().email('Must be valid email').trim().required('Required'),
-  password: Yup.string()
-    .matches(/^[a-zA-Z0-9]{6,30}$/)
-    .required('Required'),
-});
 
 export default function Register() {
   const { currentUser } = useContext(AuthContext);
@@ -50,7 +42,7 @@ export default function Register() {
             name='email'
             placeholder='Email'
           ></Field>
-          <ErrorMessage name='email' />
+          <ErrorMessage name='email'>{(msg) => <div>{msg}</div>}</ErrorMessage>
         </div>
 
         <div>
@@ -61,9 +53,11 @@ export default function Register() {
             name='password'
             placeholder='Password'
           ></Field>
-          <ErrorMessage name='password' />
+          <ErrorMessage name='password'>
+            {(msg) => <div>{msg}</div>}
+          </ErrorMessage>
         </div>
-        <button>Submit</button>
+        <Button type='submit'>Register</Button>
       </Form>
     </Formik>
   );

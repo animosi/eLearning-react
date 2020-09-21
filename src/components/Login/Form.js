@@ -1,30 +1,24 @@
 import React, { useContext } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
 import { AuthContext } from '../../firebase/Auth';
 import { Redirect } from 'react-router';
 import { app } from '../../firebase/firebase';
+import { validationSchema } from '../../validators/auth.validator';
+import { Button } from '@material-ui/core';
+import '../../styles/styles.css';
 
 const initialValues = {
   email: '',
   password: '',
 };
-
 const onSubmit = (values) => {
   const { email, password } = values;
   app
     .auth()
     .signInWithEmailAndPassword(email, password)
     .then((res) => console.log(res))
-    .catch(function (error) {
-      console.log({ error: error.code, message: error.message });
-    });
+    .catch((err) => console.log({ error: err.code, message: err.message }));
 };
-
-const validationSchema = Yup.object().shape({
-  email: Yup.string().email('Invalid email format').required('Required'),
-  password: Yup.string().min(6).required('Required'),
-});
 
 export default function Login() {
   const { currentUser } = useContext(AuthContext);
@@ -47,7 +41,7 @@ export default function Login() {
             name='email'
             placeholder='Email'
           ></Field>
-          <ErrorMessage name='email' />
+          <ErrorMessage name='email'>{(msg) => <div>{msg}</div>}</ErrorMessage>
         </div>
 
         <div>
@@ -58,10 +52,11 @@ export default function Login() {
             name='password'
             placeholder='Password'
           ></Field>
-          <ErrorMessage name='password' />
+          <ErrorMessage name='password'>
+            {(msg) => <div>{msg}</div>}
+          </ErrorMessage>
         </div>
-
-        <button className='button'>Submit</button>
+        <Button type='submit'>Login</Button>
       </Form>
     </Formik>
   );

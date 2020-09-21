@@ -9,7 +9,7 @@ import Udrop from './components/DropZone/Udrop';
 import Google from './components/GoolgePopUp/Google';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute.js';
 import Secret from './components/Secret/Secret';
-import './styles/App.scss';
+import './styles/styles.css';
 
 function App() {
   return (

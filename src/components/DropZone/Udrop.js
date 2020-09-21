@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useDropzone } from 'react-dropzone';
-import './Udrop.scss';
 
 function Udrop() {
   const [files, setFiles] = useState([]);
@@ -30,7 +29,7 @@ function Udrop() {
     <div className='App'>
       <div {...getRootProps()}>
         <input {...getInputProps()} />
-        <p className='text'>Drop files here</p>
+        <p className='white'>Drop files here</p>
       </div>
       <div>{images}</div>
     </div>

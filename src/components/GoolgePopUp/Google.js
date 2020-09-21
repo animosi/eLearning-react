@@ -4,24 +4,25 @@ import {
   googleAuthProvider,
   facebookAuthProvider,
 } from '../../firebase/firebase';
+import { Button } from '@material-ui/core';
 
 const Google = () => {
   return (
     <div>
-      <button
+      <Button
         onClick={() => {
           app.auth().signInWithPopup(googleAuthProvider);
         }}
       >
         Google Sign In
-      </button>
-      <button
+      </Button>
+      <Button
         onClick={() => {
           app.auth().signInWithPopup(facebookAuthProvider);
         }}
       >
         Facebook Sign In
-      </button>
+      </Button>
     </div>
   );
 };

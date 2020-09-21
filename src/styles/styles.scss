@@ -1,2 +1,21 @@
-@import './base/base';
-@import './base/settings';
+$bgImage: url('../images/background.jpg');
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  background-image: $bgImage;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: greenyellow;
+}
+
+button {
+  color: white !important;
+
+  &:hover {
+    color: greenyellow !important;
+  }
+}

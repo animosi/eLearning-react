@@ -1,11 +1,12 @@
 import React from 'react';
 import { app } from '../../firebase/firebase';
+import { Button } from '@material-ui/core';
 
 const Home = () => {
   return (
     <>
       <h1>Home</h1>
-      <button
+      <Button
         onClick={() =>
           app
             .auth()
@@ -16,7 +17,7 @@ const Home = () => {
         }
       >
         Sign out
-      </button>
+      </Button>
     </>
   );
 };
