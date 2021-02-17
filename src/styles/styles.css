@@ -1,16 +1,13 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("../images/background.jpg");
+  text-align: center;
+  background-image: url("/images/background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   color: greenyellow;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 button {
@@ -19,9 +16,5 @@ button {
 
 button:hover {
   color: greenyellow !important;
-}
-
-.App {
-  text-align: center;
 }
 /*# sourceMappingURL=styles.css.map */

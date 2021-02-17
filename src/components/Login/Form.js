@@ -5,7 +5,6 @@ import { Redirect } from 'react-router';
 import { app } from '../../firebase/firebase';
 import { validationSchema } from '../../validators/auth.validator';
 import { Button } from '@material-ui/core';
-import '../../styles/styles.css';
 
 const initialValues = {
   email: '',

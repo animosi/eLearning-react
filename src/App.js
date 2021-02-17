@@ -18,12 +18,12 @@ function App() {
         <div className='App'>
           <Nav />
           <Switch>
-            <PrivateRoute exact path='/' component={Home} />
-            <PrivateRoute exact path='/secret' component={Secret} />
-            <Route path='/login' exact component={Login} />
             <Route path='/register' exact component={Register} />
+            <Route path='/login' exact component={Login} />
             <Route path='/upload/' exact component={Udrop} />
             <Route path='/google/' exact component={Google} />
+            <PrivateRoute exact path='/' component={Home} />
+            <PrivateRoute exact path='/secret' component={Secret} />
           </Switch>
         </div>
       </Router>

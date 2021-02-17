@@ -19,3 +19,6 @@ const PrivateRoute = ({ component: RouteComponent, ...rest }) => {
 };
 
 export default PrivateRoute;
+
+//* ...rest is the path, history, exact etc. being past to PrivateRoute via props.
+//* component is being destructured+renamed to RouteComponent
